@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta charset="UTF-8">
+ <!-- https://v4-alpha.getbootstrap.com/components/progress/ -->
+<!-- If IE use the latest rendering engine -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+<!-- Set the page to the width of the device and set the zoon level -->
+<meta name="viewport" content="width = device-width, initial-scale = 1">
+<title>Facebook Search</title>
+<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+        <script src="moment.js"></script>
+<script src="moment-timezone.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="http://momentjs.com/downloads/moment.js"></script>
+<script src="http://momentjs.com/downloads/moment-timezone-with-data-2010-2020.js"></script>
+        
+<style>
+.jumbotron{
+    background-color:#2E2D88;
+    color:white;
+}
+/* Adds borders for tabs */
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.nav-tabs {
+    margin-bottom: 0;
+}
+     .btn.sharp clearButton{
+  border-radius:0;
+}
+    
+    
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+        background-color: rgb(59, 89, 152);
+    color:white;
+    }
+    
+    
+    
+    /* remove border radius for the tab */
+
+#exTab1 .nav-pills > li > a {
+  border-radius: 0;
+}
+    
+    #exTab1 .tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+</style>
+        
+<script type="text/javascript">
+    /*
+        
+       var x = document.getElementById("demo");
+var latitude='';
+    var longitude='';
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition,geo_failure, {maximumAge:0, timeout:10000});
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+    function showPosition(position) {
+    
+    //alert("Latitude: " + position.coords.latitude + 
+   // "<br>Longitude: " + position.coords.longitude);
+        
+        
+        latitude=position.coords.latitude;
+            longitude=position.coords.longitude;
+            
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+} 
+    function geo_failure(msg){
+        
+        alert("Please share your location"+msg);
+    }
+
+
+ */
+   
+        </script>
+        
+<script type="text/javascript">
+        //clearFunction
+    /*
+    function funcClear1(){
+
+            if(document.getElementById("placesAdd")){
+            document.getElementById("placesAdd").style.display="none";
+
+            }
+               if(document.getElementById("RecordsData")){
+            var x=document.getElementById("RecordsData");
+            x.parentNode.removeChild(x);
+
+            }
+
+            if(document.getElementById("AlbumsData")){
+            var x=document.getElementById("AlbumsData");
+            x.parentNode.removeChild(x);
+
+            }
+            if(document.getElementById("PostsData")){
+            var x=document.getElementById("PostsData");
+            x.parentNode.removeChild(x);
+
+            }
+
+            if(document.getElementById("AlbumCompleteTable")){
+            var x=document.getElementById("AlbumCompleteTable");
+            x.parentNode.removeChild(x);
+
+            }                  
+            if(document.getElementById("PostTable")){
+            var x=document.getElementById("PostTable");
+            x.parentNode.removeChild(x);
+
+            }  
+                    if(document.getElementById("usersTable")){
+            var x=document.getElementById("usersTable");
+            x.parentNode.removeChild(x);
+
+            }  
+                            if(document.getElementById("PagesTable")){
+            var x=document.getElementById("PagesTable");
+            x.parentNode.removeChild(x);
+
+            }  
+                            if(document.getElementById("GroupsTable")){
+            var x=document.getElementById("GroupsTable");
+            x.parentNode.removeChild(x);
+
+            }  
+                            if(document.getElementById("EventsTable")){
+            var x=document.getElementById("EventsTable");
+            x.parentNode.removeChild(x);
+
+            }  
+                            if(document.getElementById("PlacesTable")){
+            var x=document.getElementById("PlacesTable");
+            x.parentNode.removeChild(x);
+
+            }  
+                                    if(document.getElementById("FavoritesTable")){
+            var x=document.getElementById("FavoritesTable");
+            x.parentNode.removeChild(x);
+
+            }  
+                                            if(document.getElementById("NouserRecords")){
+            var x=document.getElementById("NouserRecords");
+            x.parentNode.removeChild(x);
+
+            }  
+                                            if(document.getElementById("NoPageRecords")){
+            var x=document.getElementById("NoPageRecords");
+            x.parentNode.removeChild(x);
+
+            }  
+                                            if(document.getElementById("NoEventRecords")){
+            var x=document.getElementById("NoEventRecords");
+            x.parentNode.removeChild(x);
+
+            }  
+                                            if(document.getElementById("NoGroupRecords")){
+            var x=document.getElementById("NoGroupRecords");
+            x.parentNode.removeChild(x);
+
+            } 
+        
+                                                    if(document.getElementById("NoFavoriteRecords")){
+            var x=document.getElementById("NoFavoriteRecords");
+            x.parentNode.removeChild(x);
+
+            } 
+        
+        
+       // document.getElementById("progressBarPlaceholder").style.display="none";
+        //New code
+        
+
+         if(document.getElementById("albumData")){
+            var x=document.getElementById("albumData");
+            x.parentNode.removeChild(x);
+
+            }
+        
+                 if(document.getElementById("postData")){
+            var x=document.getElementById("postData");
+            x.parentNode.removeChild(x);
+
+            }
+       // alert('^^^^^^'+$("#EventsTabHeader").attr('class'));
+        $("UsersTabHeader").css("border-radius","0px");
+        
+        
+         if ($("#PagesTabHeader").attr('class')=='active'){
+            $("#PagesTabHeader").removeClass('active'); 
+            $("#PagesTabHeader").css("background-color", "white");
+            $("#PagesTabHeader").css("color", "#3B5998");
+        }
+                
+       if ($("#GroupsTabHeader").attr('class')=='active'){
+          $("#GroupsTabHeader").removeClass('active'); 
+          $("#GroupsTabHeader").css("background-color", "white");
+          $("#GroupsTabHeader").css("color", "#3B5998");
+        }
+                
+       if ($("#EventsTabHeader").attr('class')=='active'){
+          $("#EventsTabHeader").removeClass('active'); 
+          $("#EventsTabHeader").css("background-color", "white");
+          $("#EventsTabHeader").css("color", "#3B5998");
+        }
+                
+        if($("#PlacesTabHeader").attr('class')=='active'){
+            $("#PlacesTabHeader").removeClass('active'); 
+            $("#PlacesTabHeader").css("background-color", "white");
+            $("#PlacesTabHeader").css("color", "#3B5998");
+        }
+                
+        if ($("#FavoritesTabHeader").attr('class')=='active'){
+            $("#FavoritesTabHeader").removeClass('active'); 
+            $("#FavoritesTabHeader").css("background-color", "white");
+            $("#FavoritesTabHeader").css("color", "#3B5998");
+        }
+        $("#UsersTabHeader").addClass('active');
+        
+        
+        $("#DetailsTab").hide();
+        $("#usersTab").hide();
+         $("#PagesTab").hide();
+         $("#GroupsTab").hide();
+         $("#EventsTab").hide();
+        $("#PlacesTab").hide();
+        $("#FavoritesTab").hide();
+
+            x=document.getElementById("ButtonsDivUser");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+
+                      x=document.getElementById("ButtonsDivGroup");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+ 
+        }
+
+                        x=document.getElementById("ButtonsDivPage");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+
+            
+        }
+
+                        x=document.getElementById("ButtonsDivEvent");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+
+
+                        x=document.getElementById("ButtonsDivPlace");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+        
+        
+        
+        
+//
+                                x=document.getElementById("progressBarPlaceholderUser");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+        
+                                x=document.getElementById("progressBarPlaceholderGroup");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+        
+                                x=document.getElementById("progressBarPlaceholderPage");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+        
+        
+                                x=document.getElementById("progressBarPlaceholderPlace");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+        
+                                x=document.getElementById("progressBarPlaceholderEvent");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+        
+        
+                                x=document.getElementById("progressBarPlaceholderAlbum");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+        
+        
+                                x=document.getElementById("progressBarPlaceholderPost");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+
+            return false; 
+    
+}
+
+    
+    function postToFB(accURL,type,picURL,name){
+                
+
+       alert("POST to FB");
+      //  picURL='https://scontent.xx.fbcdn.net/v/t1.0-1/p720x720/16708297_615706165285944_7997318197512870912_n.jpg?oh=3113174f6bc3b89a5c301168a71bc8c3&oe=595F274F';
+        
+       /* window.fbAsyncInit = function() {    
+    FB.init({
+        appId      : '612617208929589',
+        status     : true,
+        xfbml      : true
+    });
+        };
+        
+            
+            (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "http://connect.facebook.net/en_US/all.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}
+(document, 'script', 'facebook-jssdk')); */
+        /*
+  FB.ui({
+ app_id: '612617208929589',
+ method: 'feed',
+ link: window.location.href,
+ picture: picURL,
+ name:decodeURI(name),
+ caption: "FB SEARCH FROM USC CSCI571",
+ }, function(response){
+ if (response && !response.error_message)
+ alert("Posted Successfully");
+ else
+ alert("Not Posted");
+  });
+        return false;
+} 
+    
+    function showNextPage(type,nextURL){
+        
+        
+       // document.getElementById('progressBarPlaceholder').style.display="block";        
+      //  alert("NextPage"+type+nextURL);
+        var noRecordsDiv='';
+        var PBstr='';
+        if(type=='user'){
+           // alert("inside user div and table");
+            currentDiv="#"+"usersTab";
+            tableName="usersTable";
+            noRecordsDiv='NouserRecords1';
+            document.getElementById('progressBarPlaceholderUser').style.display="block"; 
+            PBstr='progressBarPlaceholderUser';
+            
+            
+        }
+        else if(type=='group'){
+           currentDiv="#"+"GroupsTab";
+            tableName="GroupsTable";
+            noRecordsDiv="NoGroupRecords1";
+            document.getElementById('progressBarPlaceholderGroup').style.display="block"; 
+            PBstr='progressBarPlaceholderGroup';
+            
+        }
+        else if(type=='page'){
+            currentDiv="#"+"PagesTab";
+            tableName="PagesTable";
+            noRecordsDiv="NoPageRercords1";
+            document.getElementById('progressBarPlaceholderPage').style.display="block"; 
+            PBstr='progressBarPlaceholderPage';
+        }
+        else if(type=='event'){
+              currentDiv="#"+"EventsTab";
+            tableName="EventsTable";
+            noRecordsDiv="NoEventRecords1";
+            document.getElementById('progressBarPlaceholderEvent').style.display="block"; 
+            PBstr='progressBarPlaceholderEvent';
+            
+        }
+        else if(type=='place'){
+            currentDiv="#"+"PlacesTab";
+            tableName="PlacesTable";
+            noRecordsDiv="NoPlaceRecords1";
+            document.getElementById('progressBarPlaceholderPlace').style.display="block";
+            PBstr='progressBarPlaceholderPlace';
+            
+            
+        }
+        
+
+        x=document.getElementById(tableName);
+        if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        }
+        x=document.getElementById("ButtonsDiv");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        }
+        
+        var ButtonDiv='';
+        
+        if(type=='user'){
+            x=document.getElementById("ButtonsDivUser");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+           ButtonDiv= 'ButtonsDivUser';
+        }
+        else if(type=="group"){
+                      x=document.getElementById("ButtonsDivGroup");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        }   
+           ButtonDiv= 'ButtonsDivGroup'; 
+        }
+        else if(type=='page'){
+                        x=document.getElementById("ButtonsDivPage");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+          ButtonDiv= 'ButtonsDivPage';  
+            
+        }
+        else if(type=='event'){
+                        x=document.getElementById("ButtonsDivEvent");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+            ButtonDiv= 'ButtonsDivEvent';
+        }
+        else if(type=='place'){
+                        x=document.getElementById("ButtonsDivPlace");
+                if(x){
+            //alert("inside remove table");
+        x.parentNode.removeChild(x);
+        } 
+            ButtonDiv= 'ButtonsDivPlace';
+            
+        }
+        x=document.getElementById(noRecordsDiv);
+        if(x){
+            x.parentNode.removeChild(x);
+        }
+        
+        
+
+        
+        document.getElementById("DetailsTab").style.display="none";
+          $.getJSON(nextURL, function(response){
+    var JSONData = response.data;
+//alert("Size of list"+Object.keys['Id'].length);
+   rowno=0;
+   var row="";
+ var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+              var countOfRecords=1;
+              var html='';
+              var buttonStr='';
+              if(JSONData==''){
+                  html+=" <div class=\"panel panel-warning\" id='"+noRecordsDiv+"' style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                  $(currentDiv).append(html);
+                  //alert("No further data");
+                  
+            buttonStr="<div id='"+ButtonDiv+"' style=\"text-align:center;\" >";
+              //   alert("Response.paging"+response.paging.previous);
+              if(type!='event'){
+              if(response.paging.previous!=null || response.paging.previous!=undefined){
+                 
+                   buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('"+type+"','"+response.paging.previous+"');\"> Previous</button> ";
+              }
+              }
+                  buttonStr+="</div>";
+                  
+              $(currentDiv).append(buttonStr);
+              }
+        else      {      
+      tableHeader="<table class=\"table\" id='"+tableName+"' style=\"text-align:left;margin-left:3%;margin-right:3%;\"> <thead style=\"vertical-align: center;border-bottom: 2px solid #eceee;padding: 12px;\"> <tr> <th style=\"padding: 12px;\"> #</th> <th style=\"padding: 12px;\">Profile Photo</th><th style=\"padding: 12px;\">Name</th><th style=\"padding: 12px;\">Favorite</th><th style=\"padding: 12px;\"> Detail </th> </tr> </thead> </table>";
+
+     $(currentDiv).append(tableHeader);
+  for( var i in JSONData){
+      //alert("Inside JSONDATA for loop");
+      var item = JSONData[i];
+      //rowno=rowno+1;
+      id=item.id;
+      name=item.name;
+      name1=encodeURI(item.name);
+      //string.replace(accountname)
+      picURL=item.picture.data.url;
+     // alert("picture URL"+item.picture.data.url);
+     // alert("id"+item.id+"name"+item.name);
+      pic=encodeURI(item.picture.data.url);
+
+
+      
+               // pic=encodeURI(value.picture.url);
+                //name1=encodeURI(value.name);
+                //id,type,name,picURL
+                //console.log(value.id+'user');
+                  //var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+               // currentDiv="#usersTab";
+                if( FavoritesList!=null && (FavoritesList[id+type]!=null || FavoritesList[id+type]!=undefined)){
+                    var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+                        // alert('inside if of useer');           
+                
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+id+"> <td style=\"padding: 12px;\">"+countOfRecords+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+picURL+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+id+",'"+type+"','"+name1+"','"+picURL+"');\"> <span class=\"glyphicon glyphicon-star\" style=\"color:#faf714;\" id="+id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+id+",'user','"+name1+"','"+picURL+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                    
+                }
+                 
+                else{ 
+                
+            //  alert('inside else of useer');
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+id+"> <td style=\"padding: 12px;\">"+countOfRecords+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+picURL+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+id+",'"+type+"','"+name1+"','"+picURL+"');\"> <span class=\"glyphicon glyphicon-star-empty\" id="+id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+id+",'"+type+"','"+name1+"','"+picURL+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                }
+
+           //  i++;
+              //  countResults++;
+      countOfRecords++;
+
+
+            
+           
+        }
+            document.getElementById(PBstr).style.display="none";
+                 $("#"+tableName).append(row);
+              // document.getElementById('progressBarPlaceholder').style.display="none";
+      
+        var buttonStr=''; 
+              
+              // HTML markup for pagination
+              buttonStr="<div id='"+ButtonDiv+"' style=\"text-align:center;\" >";
+              if(type!='event'){
+              if(response.paging.previous!=null || response.paging.previous!=undefined){
+                //   alert("Inside Previous Paging");
+                   buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('"+type+"','"+response.paging.previous+"');\"> Previous</button> ";
+              }
+              }
+            
+            //alert('previous'+response.paging.previous);
+              if(response.paging.next!=null || response.paging.next!=undefined){
+                 buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('"+type+"','"+response.paging.next+"');\"> Next</button> ";  
+              }
+
+              buttonStr+="</div>";
+            console.log(buttonStr);
+              $(currentDiv).append(buttonStr);
+          }
+      document.getElementById(PBstr).style.display="none";
+      
+
+  });
+        
+        return false;
+
+    }
+    */
+        </script>
+        
+
+        
+        <script type="text/javascript" src="/functions.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+/*
+ $(document).ready(function(){
+     
+
+     
+
+    $("#callPHP").click(function(){
+        if($("#keyword").val()==''){
+           
+           alert("Input Field cannot be empty. Please enter some value.");
+           }
+        
+        else{
+         var inputKeyword= $("#keyword").val();
+        //alert("Input Keyword: "+inputKeyword);
+         //e.preventDefault();
+        
+        //AJAX call for USERS
+
+        //$("#progressbar").show();
+        funcClear1();
+        //document.getElementById('progressbar').style.display="block";
+        
+        
+        
+              
+        window.fbAsyncInit = function() {    
+    FB.init({
+        appId      : '612617208929589',
+        status     : true,
+        xfbml      : true
+    });
+        };
+        
+            
+            (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "http://connect.facebook.net/en_US/all.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}
+(document, 'script', 'facebook-jssdk')); 
+
+//document.getElementById("progressbar").style.display="block";
+    
+        var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+        var currentDiv='';
+            var buttonStr='';
+        //alert('Fav'+FavoritesList );
+      
+        var countResults=0;
+        
+           // alert('inside 0 countResults');
+             // $('#progressBarPlaceholder').show();
+            //document.getElementById('progressBarPlaceholder').style.display="block";
+            var PBStrUser=" <div id=\"progressBarPlaceholderUser\" style=\"display:block;\"><div class=\"progress\"  id=\"showProgressBar\" style=\"display:block; margin-top:20%;\"> <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:70%\"></div></div></div>";
+            $("#usersTab").append(PBStrUser);
+            var PBStrPage=" <div id=\"progressBarPlaceholderPage\" style=\"display:block;\"><div class=\"progress\"  id=\"showProgressBar\" style=\"display:block; margin-top:20%;\"> <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:70%\"></div></div></div>";
+            $("#PagesTab").append(PBStrPage);
+            var PBStrEvent=" <div id=\"progressBarPlaceholderEvent\" style=\"display:block;\"><div class=\"progress\"  id=\"showProgressBar\" style=\"display:block; margin-top:20%;\"> <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:70%\"></div></div></div>";
+            $("#EventsTab").append(PBStrEvent);
+            var PBStrPlace=" <div id=\"progressBarPlaceholderPlace\" style=\"display:block;\"><div class=\"progress\"  id=\"showProgressBar\" style=\"display:block; margin-top:20%;\"> <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:70%\"></div></div></div>";
+            $("#PlacesTab").append(PBStrPlace);
+            var PBStrGroup=" <div id=\"progressBarPlaceholderGroup\" style=\"display:block;\"><div class=\"progress\"  id=\"showProgressBar\" style=\"display:block; margin-top:20%;\"> <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:70%\"></div></div></div>";
+            $("#GroupsTab").append(PBStrGroup);
+        
+        $.ajax({url: "formParser.php",type: "GET",data: {Keyword: inputKeyword, methodName: 'queryData', Type: "user"}, success: function(result){
+           var countResults=0;
+ 
+            tableHeader="<table class=\"table\" id=\"usersTable\" style=\"text-align:left;margin-left:3%;margin-right:3%;\"> <thead style=\"vertical-align: center;border-bottom: 2px solid #eceee;padding: 12px;\"> <tr> <th style=\"padding: 12px;\"> #</th> <th style=\"padding: 12px;\">Profile Photo</th><th style=\"padding: 12px;\">Name</th><th style=\"padding: 12px;\">Favorite</th><th style=\"padding: 12px;\"> Detail </th> </tr> </thead> </table>";
+            //$("#usersTab").append(result);
+            
+            
+            //$("#usersTab").append(tableHeader);
+            //alert("after basic header is prepared");
+            var i=1;
+           // result=$.parseJSON(result);
+            
+            
+            
+            
+          // alert($.parseJSON(result));
+            result=$.parseJSON(result);
+            var row="";
+              //alert("after basic header is prepared");
+            //console.log($.parseJSON(result));
+            if(result.length!=0){
+                 //$("#usersTab").append(tableHeader);
+                var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+            $.each(result, function( index, value ) {
+                if(value.id!=null ||value.id!=undefined){
+                    countResults++;
+                }
+                if(typeof value == 'object') {
+                //alert("Inside for");
+               // alert(value.name);
+                pic=encodeURI(value.picture.url);
+                name1=encodeURI(value.name);
+                //id,type,name,picURL
+                //console.log(value.id+'user');
+                  var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+                currentDiv="#usersTab";
+                if( FavoritesList!=null && (FavoritesList[value.id+'user']!=null || FavoritesList[value.id+'user']!=undefined)){
+                    var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+                        // alert('inside if of useer');           
+                
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'user','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star\" style=\"color:#faf714;\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'user','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                    
+                }
+                 
+                else{ 
+                
+            //  alert('inside else of useer');
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'user','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star-empty\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'user','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                }
+                 // alert(value.picture.url);
+                               //$("#users").append(row);
+                      if(value.paging!=null || value.paging!=undefined ){
+
+
+                }
+                                    i++;
+
+                }
+                else {
+                    var pagingData=$.parseJSON(value);
+                    //alert(pagingData['next']);
+                    //var buttonStr='';
+                     $.each(pagingData, function( index, value ) {
+                         buttonStr="<div id=\"ButtonsDivUser\" style=\"text-align:center;\" >";
+                       
+                        if(value.previous!=null || value.previous!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('user','"+value.previous+"');\"> <center>Previous</center></button> ";
+                         }
+                         
+                         if(value.next!=null || value.next!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('user','"+value.next+"');\"><center> Next </center></button> ";
+                         }
+
+                         
+                         //$('#usersTab').append(buttonStr);
+                         
+                     });
+                    }
+                //}
+                            });
+
+
+            }
+            if(countResults!=0){
+ document.getElementById('progressBarPlaceholderUser').style.display="none";
+                $("#usersTab").append(tableHeader);
+                $("#usersTable").append(row);
+                $('#usersTab').append(buttonStr);
+            }
+            else{
+                document.getElementById('progressBarPlaceholderUser').style.display="none";
+                 html=" <div class=\"panel panel-warning\" id=\"NouserRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                $("#usersTab").append(html);
+                $('#usersTab').append(buttonStr);
+            }
+            
+
+             //document.getElementById('progressBarPlaceholder').style.display="none";
+            
+           
+        }
+              
+               });
+        
+        //AJAX call for PAGES
+        
+                $.ajax({url: "formParser.php",type: "GET",data: {Keyword: inputKeyword, methodName: 'queryData',Type: "page"}, success: function(result){
+                   // document.getElementById('progressBarPlaceholder').style.display="block";
+                    var countResults=0;
+                    var buttonStr='';
+                    var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+            tableHeader="<table class=\"table\" id=\"PagesTable\" style=\"text-align:left;margin-left:3%;margin-right:3%;\"> <thead style=\"vertical-align: center;border-bottom: 2px solid #eceee;padding: 12px;\"> <tr> <th style=\"padding: 12px;\"> #</th> <th style=\"padding: 12px;\">Profile Photo</th><th style=\"padding: 12px;\">Name</th><th style=\"padding: 12px;\">Favorite</th><th style=\"padding: 12px;\"> Detail </th> </tr> </thead> </table>";
+            //$("#PagesTab").append(result);
+            
+            //alert("after basic header is prepared");
+            var i=1;
+           // result=$.parseJSON(result);
+          // alert($.parseJSON(result));
+            result=$.parseJSON(result);
+            var row="";
+              //alert("after basic header is prepared");
+            //console.log($.parseJSON(result));
+                    currentDiv="#PagesTab";
+                    if(result.length!=0){
+                        //$("#PagesTab").append(tableHeader); 
+            $.each(result, function( index, value ) {
+                if(value.id!=null || value.id!=undefined){
+                    countResults++;
+                }
+                //alert("Inside for");
+                if(typeof value == 'object') {
+                
+                //alert(value.name);
+                                   
+                pic=encodeURI(value.picture.url);
+                name1=encodeURI(value.name);
+                //alert('Fav'+)
+               if(FavoritesList!=null && (FavoritesList[value.id+'page']!=null || FavoritesList[value.id+'page']!=undefined)){
+                   //alert('inside if of useer');
+  
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'page','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star\" style=\"color:#faf714;\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'page','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";   
+                   
+                   
+               }
+                else{
+//alert('inside else of user');
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'page','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star-empty\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'page','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                 // alert(value.picture.url);
+                               //$("#users").append(row);
+                
+               
+                }     
+             i++;
+            //countResults++;
+                }
+                else{
+                    
+                                        var pagingData=$.parseJSON(value);
+                   // alert(pagingData['next']);
+                   // var buttonStr='';
+                     $.each(pagingData, function( index, value ) {
+                         buttonStr="<div id=\"ButtonsDivPage\" style=\"text-align:center;\" >";
+                        if(value.previous!=null || value.previous!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('page','"+value.previous+"');\"> <center>Previous</center></button> ";
+                         }
+                         if(value.next!=null || value.next!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('page','"+value.next+"');\"><center> Next</center></button> ";
+                         }
+
+                         
+                       //  $('#PagesTab').append(buttonStr);
+                         
+                     });
+                    
+                    
+                }
+            });
+                        if(countResults!=0){
+                           document.getElementById('progressBarPlaceholderPage').style.display="none"; 
+                            $("#PagesTab").append(tableHeader); 
+                            $("#PagesTable").append(row);
+                             $('#PagesTab').append(buttonStr);
+                            //$('#PagesTab').append(buttonStr);
+                        }
+                        else{
+                            document.getElementById('progressBarPlaceholderPage').style.display="none"; 
+                            html=" <div class=\"panel panel-warning\" id=\"NouserRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                            $("#PagesTab").append(html);
+                            
+                            //$('#PagesTab').append(buttonStr);
+                            $('#PagesTab').append(buttonStr);
+                        }
+
+            
+                    }
+                    else{
+                                     html=" <div class=\"panel panel-warning\" id=\"NoPagesRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                $("#PagesTab").append(html);    
+                        
+                    }
+            
+          //alert("before closure");  
+           //document.getElementById('progressBarPlaceholderPage').style.display="none";   
+        }
+                    
+                       });
+        
+                
+        //AJAX call for EVENTS
+         $.ajax({url: "formParser.php",type: "GET",data: {Keyword: inputKeyword, methodName: 'queryData',Type: "event"}, success: function(result){
+                    //document.getElementById('progressBarPlaceholder').style.display="block";
+                    currentDiv="#EventsTab";
+             var countResults=0;
+             var buttonStr='';
+                    var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+                    //alert("Inside events");
+            tableHeader="<table class=\"table\" id=\"EventsTable\" style=\"text-align:left;margin-left:3%;margin-right:3%;\"> <thead style=\"vertical-align: center;border-bottom: 2px solid #eceee;padding: 12px;\"> <tr> <th style=\"padding: 12px;\"> #</th> <th style=\"padding: 12px;\">Profile Photo</th><th style=\"padding: 12px;\">Name</th><th style=\"padding: 12px;\">Favorite</th><th style=\"padding: 12px;\"> Detail </th> </tr> </thead> </table>";
+            //$("#EventsTab").append(result);
+            
+            //alert("after basic header is prepared");
+            var i=1;
+           // result=$.parseJSON(result);
+          // alert($.parseJSON(result));
+            result=$.parseJSON(result);
+            var row="";
+                     if(result.length!=0){
+                         //$("#EventsTab").append(tableHeader);
+              //alert("after basic header is prepared");
+            //console.log($.parseJSON(result));
+            $.each(result, function( index, value ) {
+                //alert("Inside for");
+                //alert(value.name);
+                if(value.id!=null || value.id!=undefined){
+                    countResults++;
+                }
+                 if(typeof value == 'object') {
+                                pic=encodeURI(value.picture.url);
+                name1=encodeURI(value.name);
+                
+                
+                if(FavoritesList!=null && (FavoritesList[value.id+'event']!=null || FavoritesList[value.id+'event']!=undefined)){
+                row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'event','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star\" style=\"color:#faf714;\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'event','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                    
+                }
+                else{
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'event','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star-empty\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'event','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                 // alert(value.picture.url);
+                               //$("#users").append(row);
+                
+                
+                }    
+            i++;
+                countResults++;
+                 }
+                
+                
+                    
+                                  else{
+                    
+                                        var pagingData=$.parseJSON(value);
+                    //alert(pagingData['next']);
+                    //var buttonStr='';
+                     $.each(pagingData, function( index, value ) {
+                         buttonStr="<div id=\"ButtonsDivEvent\" style=\"text-align:center;\" >";
+                        if(value.previous!=null || value.previous!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('event','"+value.previous+"');\"> <center>Previous</center></button> ";
+                         }
+                         if(value.next!=null || value.next!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('event','"+value.next+"');\"><center> Next</center></button> ";
+                         }
+
+                         
+                       //  $('#EventsTab').append(buttonStr);
+                         
+                     });
+                    
+                    
+                }  
+
+                    
+                    
+                    
+                
+            });
+                         
+                  if(countResults!=0){
+                    document.getElementById('progressBarPlaceholderEvent').style.display="none";
+                    $("#EventsTab").append(tableHeader);
+                    $("#EventsTable").append(row);
+                      //alert("buttnStr"+buttonStr);
+                       $('#EventsTab').append(buttonStr);
+                    
+                }
+                    else{
+                        document.getElementById('progressBarPlaceholderEvent').style.display="none";
+                        
+                html=" <div class=\"panel panel-warning\" id=\"NoEventRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                $("#EventsTab").append(html);  
+                $('#EventsTab').append(buttonStr);
+                        
+                    }
+
+          //  $("#EventsTable").append(row);
+            
+                     }
+                    else{
+                html=" <div class=\"panel panel-warning\" id=\"NoEventRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                $("#EventsTab").append(html);    
+                        
+                    }
+            
+            document.getElementById('progressBarPlaceholderEvent').style.display="none";
+        }
+                      
+                       });
+        
+        //AJAX call for GROUPS
+        
+                $.ajax({url: "formParser.php",type: "GET",data: {Keyword: inputKeyword, methodName: 'queryData',Type: "group"}, success: function(result){
+                    currentDiv="#GroupsTab";
+                    var countResultsGroup=0;
+                    var buttonStr='';
+                    
+                   // document.getElementById('progressBarPlaceholder').style.display="block";
+                    var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+            tableHeader="<table class=\"table\" id=\"GroupsTable\" style=\"text-align:left;margin-left:3%;margin-right:3%;\"> <thead style=\"vertical-align: center;border-bottom: 2px solid #eceee;padding: 12px;\"> <tr> <th style=\"padding: 12px;\"> #</th> <th style=\"padding: 12px;\">Profile Photo</th><th style=\"padding: 12px;\">Name</th><th style=\"padding: 12px;\">Favorite</th><th style=\"padding: 12px;\"> Detail </th> </tr> </thead> </table>";
+           // $("#GroupsTab").append(result);
+         
+            //alert("after basic header is prepared");
+            var i=1;
+           // result=$.parseJSON(result);
+          // alert($.parseJSON(result));
+            result=$.parseJSON(result);
+            var row="";
+                    if(result.length!=0){
+                       
+                           //$("#GroupsTab").append(tableHeader);
+              //alert("after basic header is prepared");
+            //console.log($.parseJSON(result));
+            $.each(result, function( index, value ) {
+                if(value.id!=null ||value.id!=undefined){
+                    countResultsGroup++;
+                }
+                //alert("Inside for");
+                //alert(value.name);
+                //alert(value.name);
+                if(typeof value == 'object') {
+                                pic=encodeURI(value.picture.url);
+                name1=encodeURI(value.name);
+                
+                
+                if(FavoritesList!=null && (FavoritesList[value.id+'group']!=null || FavoritesList[value.id+'group']!=undefined)){
+                  row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'group','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star\" style=\"color:#faf714;\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'group','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";  
+                    
+                    
+                    
+                }
+                else{
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'group','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star-empty\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'group','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                 // alert(value.picture.url);
+                               //$("#users").append(row);
+                
+                i++;
+                }
+                countResults++;
+                }
+                else{
+                    
+                                                            var pagingData=$.parseJSON(value);
+                   // alert(pagingData['next']);
+                   // var buttonStr='';
+                     $.each(pagingData, function( index, value ) {
+                         buttonStr="<div id=\"ButtonsDivGroup\" style=\"text-align:center;\" >";
+                        if(value.previous!=null || value.previous!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('group','"+value.previous+"');\"> <center>Previous</center></button> ";
+                         }
+                         if(value.next!=null || value.next!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('group','"+value.next+"');\"><center> Next</center></button> ";
+                         }
+
+                         
+                       //  $('#GroupsTab').append(buttonStr);
+                         
+                     });
+                    
+                    
+                    
+                    
+                }
+                            });
+            
+           // $("#GroupsTable").append(row);
+                        
+                        
+                        if(countResultsGroup!=0){
+                            
+                            //alert("Inside if of groups");
+                            document.getElementById('progressBarPlaceholderGroup').style.display="none";
+                            $("#GroupsTab").append(tableHeader);
+                            $("#GroupsTable").append(row);
+                            $('#GroupsTab').append(buttonStr);
+                            
+                        }
+                        else{
+                            document.getElementById('progressBarPlaceholderGroup').style.display="none";
+                           html=" <div class=\"panel panel-warning\" id=\"NoGroupRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                $("#GroupsTab").append(html);
+                            $('#GroupsTab').append(buttonStr);
+                            
+                        }
+            
+                    }
+                    else{
+                 html=" <div class=\"panel panel-warning\" id=\"NoGroupRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                $("#GroupsTab").append(html); 
+                       
+                        
+                    }
+            
+         // document.getElementById('progressBarPlaceholderGroup').style.display="none";
+        }
+                       });
+                       //});
+        
+        //AJAX call for PLACES
+        
+               // var latitude= '34.028709';
+       //var longitude='-118.2863734';
+        
+        
+        alert('latitude'+latitude);
+       // alert('lattude'+latitude);
+        if(longitude!='' || latitude!='' || (longitude!=null || latitude!=null) || (longitude!=undefined || latitude!=undefined) ){
+       // document.getElementById('progressBarPlaceholder').style.display="block";
+        currentDiv="#PlacesTab";
+                $.ajax({url: "formParser.php",type: "GET",data: {Keyword: inputKeyword, Type: "place", methodName: 'queryData',Latitude: latitude, Longitude: longitude}, success: function(result){
+                 var countResults=0;
+                    var buttonStr='';
+                    
+                    var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+            tableHeader="<table class=\"table\" id=\"PlacesTable\" style=\"text-align:left;margin-left:3%;margin-right:3%;\"> <thead style=\"vertical-align: center;border-bottom: 2px solid #eceee;padding: 12px;\"> <tr> <th style=\"padding: 12px;\"> #</th> <th style=\"padding: 12px;\">Profile Photo</th><th style=\"padding: 12px;\">Name</th><th style=\"padding: 12px;\">Favorite</th><th style=\"padding: 12px;\"> Detail </th> </tr> </thead> </table>";
+           // $("#PlacesTab").append(result);
+         
+            //alert("after basic header is prepared");
+            var i=1;
+           // result=$.parseJSON(result);
+          // alert($.parseJSON(result));POst
+            result=$.parseJSON(result);
+            var row="";
+                    if(result.length!=0){
+                          // $("#PlacesTab").append(tableHeader);
+              //alert("after basic header is prepared");
+            //console.log($.parseJSON(result));
+            $.each(result, function( index, value ) {
+                if(value.id!=null || value.id!=undefined){
+                    
+                    countResults++;
+                }
+                
+                
+                if(typeof value == 'object') {
+                //alert("Inside for");
+                //alert(value.name);
+                                pic=encodeURI(value.picture.url);
+                name1=encodeURI(value.name);
+                
+                  if(FavoritesList!=null && (FavoritesList[value.id+'place']!=null || FavoritesList[value.id+'place']!=undefined)){
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'place','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star\" style=\"color:#faf714;\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'place','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                  
+                  }
+                  else{
+                 row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id="+value.id+"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value.picture.url+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+value.name+"</td>"+"<td style=\"padding: 12px;\">         <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value.id+",'place','"+name1+"','"+value.picture.url+"');\"> <span class=\"glyphicon glyphicon-star-empty\" id="+value.id+'fav'+"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value.id+",'place','"+encodeURI(value.name)+"','"+value.picture.url+"','"+currentDiv+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>";
+                 // alert(value.picture.url);
+                               //$("#users").append(row);
+                }
+                i++;
+                
+                
+                }
+                
+                else{
+                    
+                                                                             var pagingData=$.parseJSON(value);
+                   // alert(pagingData['next']);
+                    //var buttonStr='';
+                     $.each(pagingData, function( index, value ) {
+                         buttonStr="<div id=\"ButtonsDivPlace\" style=\"text-align:center;\" >";
+                        if(value.previous!=null || value.previous!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('place','"+value.previous+"');\"> <center>Previous</center></button> ";
+                         }
+                         if(value.next!=null || value.next!=undefined){
+                        // alert("next"+value.next);
+                         buttonStr+="<button type=\"button\" class=\"btn btn-default\" onclick=\"showNextPage('place','"+value.next+"');\"><center> Next</center></button> ";
+                         }
+
+                         
+                      //   $('#PlacesTab').append(buttonStr);
+                         
+                     });   
+                    
+                    
+                    
+                    
+                    
+                    
+                }
+                
+
+                
+                            });
+
+                        
+                                   if(countResults!=0){
+                           document.getElementById('progressBarPlaceholderPlace').style.display="none";
+                        $("#PlacesTab").append(tableHeader);
+                        
+                            $("#PlacesTable").append(row); 
+                           $('#PlacesTab').append(buttonStr);
+                           
+                       }
+
+         //   $("#PlacesTable").append(row); 
+                        else{
+                            document.getElementById('progressBarPlaceholderPlace').style.display="none";
+                            html=" <div class=\"panel panel-warning\" id=\"NoPlaceRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                $("#PlacesTab").append(html); 
+                            $('#PlacesTab').append(buttonStr);
+                            
+                        }
+            
+                }
+                   else{
+                 html=" <div class=\"panel panel-warning\" id=\"NoPlaceRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">No Records Found </div> </center></div>";
+                $("#PlacesTab").append(html); 
+                        
+                    }
+          //  
+            //document.getElementById('progressBarPlaceholderPlace').style.display="none";
+        }
+       
+        }); 
+
+            
+            
+            
+        }
+ 
+        else{
+            
+                html=" <div class=\"panel panel-warning\" id=\"NoPlaceRecords\" style=\"border:0;\"> <center> <div class=\"panel-heading\" style=\"width:50%;background-color: #FFC750\">Please share your location to enable this functionality. Please reload the page and share your location (This functionality works only in Firefox)</div> </center></div>";
+                $("#PlacesTab").append(html); 
+        }
+                
+            
+            $("#usersTab").hide();
+            $("#PagesTab").hide();
+            $("#GroupsTab").hide();
+            $("#EventsTab").hide();
+            $("#PlacesTab").hide();
+            $("#FavoritesTab").hide();
+                   //  document.getElementById('progressbar').style.display="none";
+           // $("#progressbar").hide();
+                    var i=0;
+        if(countResults=4){
+           // alert("inside $$$$$$$ countresults 4");
+           // $('#progressBarPlaceholder').hide();
+            if($("#UsersTabHeader").attr('class')=='active'){
+          $("#usersTab").show();  
+        }
+        
+        else if ($("#PagesTabHeader").attr('class')=='active'){
+            $("#PagesTab").show(); 
+        }
+                
+        else if ($("#GroupsTabHeader").attr('class')=='active'){
+          $("#GroupsTab").show();   
+        }
+                
+        else if ($("#EventsTabHeader").attr('class')=='active'){
+          $("#EventsTab").show();   
+        }
+                
+        else if ($("#PlacesTabHeader").attr('class')=='active'){
+            $("#PlacesTab").show(); 
+        }
+                
+        else if ($("#FavoritesTabHeader").attr('class')=='active'){
+            $("#FavoritesTab").show(); 
+        }
+        else{
+           // $("#usersTab").show(); 
+        }
+            
+        }
+
+        
+    }
+        
+        
+        return false;
+    });
+ 
+     
+});
+    
+    function showData(id,tableName){
+        
+        //alert(id);
+        var activeTab='#'+id;
+       // alert('activeTab'+activeTab);
+        
+        $(activeTab).addClass("active");
+        $(activeTab).css("background-color", "#3B5998");
+        $(activeTab).css("color", "white");
+        var name="#"+tableName;
+        $(name).show();
+
+ 
+            if(id!="UsersTabHeader"){
+                //tab="#"+id;
+                    $("#UsersTabHeader").removeClass("active");
+                    $("#UsersTabHeader").css("background-color", "white");
+                    $("#UsersTabHeader").css("color", "#3B5998");
+                    $("#usersTab").hide();
+                //document.getElementById("usersTab").style.display="block";
+
+            }
+        if(id!="PagesTabHeader"){
+                    $("#PagesTabHeader").removeClass("active");
+                    $("#PagesTabHeader").css("background-color", "white");
+                    $("#PagesTabHeader").css("color", "#3B5998");
+                    $("#PagesTab").hide();
+            
+        }
+        if(id!="EventsTabHeader"){
+                    $("#EventsTabHeader").removeClass("active");
+                    $("#EventsTabHeader").css("background-color", "white");  
+                    $("#EventsTabHeader").css("color", "#3B5998");
+                    $("#EventsTab").hide();
+        }
+        if(id!="GroupsTabHeader"){
+                    $("#GroupsTabHeader").removeClass("active");
+                    $("#GroupsTabHeader").css("background-color", "white");
+                    $("#GroupsTabHeader").css("color", "#3B5998");
+                    $("#GroupsTab").hide();
+        }
+        if(id!="PlacesTabHeader"){
+                    $("#PlacesTabHeader").removeClass("active");
+                    $("#PlacesTabHeader").css("background-color", "white");
+                    $("#PlacesTabHeader").css("color", "#3B5998");
+                    $("#PlacesTab").hide();
+        }
+                if(id!="FavoritesTabHeader"){
+                    //alert("inside favorites tab header--1");
+                   // showFavorites();
+                    $("#FavoritesTabHeader").removeClass("active");
+                    $("#FavoritesTabHeader").css("background-color", "white");
+                    $("#FavoritesTabHeader").css("color", "#3B5998");
+                    $("#FavoritesTab").hide();
+        }
+        if(id=="FavoritesTabHeader"){
+                               // alert("inside favorites tab header");
+                    showFavorites();
+            
+        }
+$("#Details").hide();
+        document.getElementById("DetailsTab").style.display="none";
+        
+        
+        return false;
+    }
+    function showDiv(currentDiv){
+        
+       // alert("Inside ShwDiv"+currentDiv);
+        $("#DetailsTab").hide();
+        $(currentDiv).show();
+    }
+    function showDetails(id,type,name,picURL,currentDiv){
+                //alert("Inside ShowDEtails");
+      
+        var x=document.getElementById('postData');
+        if(x){
+            x.parentNode.removeChild(x);
+        }
+        var x=document.getElementById('albumData');
+        if(x){
+            x.parentNode.removeChild(x);
+        }
+        
+                var x=document.getElementById('progressBarPlaceholderAlbum');
+        if(x){
+            x.parentNode.removeChild(x);
+        }
+        
+                        var x=document.getElementById('progressBarPlaceholderPost');
+        if(x){
+            x.parentNode.removeChild(x);
+        }
+        
+           document.getElementById("DetailsTab").style.display="block";
+        
+ 
+        //alert(id+type);
+        
+      var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+    var button='';
+                    var PBStrAlbum=" <div id=\"progressBarPlaceholderAlbum\" style=\"display:block;\"><div class=\"progress\"  id=\"showProgressBar\" style=\"display:block; margin-top:20%;\"> <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:70%\"></div></div></div>";
+            $("#albumDataDiv").append(PBStrAlbum);
+        
+                    var PBStrPost=" <div id=\"progressBarPlaceholderPost\" style=\"display:block;\"><div class=\"progress\"  id=\"showProgressBar\" style=\"display:block; margin-top:20%;\"> <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:70%\"></div></div></div>";
+            $("#postDataDiv").append(PBStrPost);
+         
+                if(FavoritesList!=null && (FavoritesList[id+type]!=null || FavoritesList[id+type]!=undefined)){
+                    //alert("inside if");
+                   button=" <br/><button type=\"button\" class=\"btn btn-default btn-sm\" onClick=\"showDiv('"+currentDiv+"');\"><span class=\"glyphicon glyphicon-menu-left\"></span> Back </button><button type=\"button\" class=\"btn btn-fb\" style=\"background-color:#3B5998;color:white;float:right;margin-left:10px;\" onclick=\"postToFB('www.google.com','"+type+"+','"+picURL+"','"+decodeURI(name)+"');\"><i class=\"fa fa-facebook\"></i></button>&nbsp&nbsp&nbsp<button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;float:right;\" onclick=\"addToFavorite("+id+",'"+type+"','"+name+"','"+picURL+"');\"> <span class=\"glyphicon glyphicon-star\" style=\"color:#faf714;\" id="+id+type+'fav'+"></span></button><br/><br/><br/>";
+                    
+                    
+                    
+                }
+                else{
+                    //alert("inside else");
+        button="<br/><button type=\"button\" class=\"btn btn-default btn-sm\" onClick=\"showDiv('"+currentDiv+"');\"><span class=\"glyphicon glyphicon-menu-left\"></span> Back </button><button type=\"button\" class=\"btn btn-fb\" style=\"background-color:#3B5998;color:white;float:right;margin-left:10px;\" onclick=\"postToFB('www.google.com','"+type+"+','"+picURL+"','"+decodeURI(name)+"');\"><i class=\"fa fa-facebook\"></i></button>&nbsp&nbsp&nbsp <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;float:right;\" onclick=\"addToFavorite("+id+",'"+type+"','"+name+"','"+picURL+"');\"> <span class=\"glyphicon glyphicon-star-empty\" id="+id+type+'fav'+"></span></button><br/><br/><br/>";
+                }
+        
+        
+        
+        $('#buttonDiv').html(button);
+        if(type!='event'){
+         $.ajax({url: "formParser.php",type: "GET",data: {methodName: "showDetails", IdVal: id, Keyword:'', Type:type}, success: function(result){
+             var n=0;
+             var pics='';
+             var row='';
+             result=$.parseJSON(result);
+             //alert(result);
+//alert('pic'+result['picture'].url);
+             var logo=result['picture'].url;
+             
+             
+             pics+=" <div id=\"albumData\"><div class=\"panel-group\" id=\"accordion\">";
+            // alert("about to enter the if condition");
+          if('albums' in result){
+             // alert("inside if of albums");
+              if(result['albums']!=null || result['albums']!=undefined || type!='event'){
+             if(result['albums']){
+                          $.each(result['albums'], function( index, value ){
+                             // alert("inside if of albums");
+                              name1=encodeURI(value.name);
+
+
+                              //pics+="<div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#"+n+"\">"+value.name+"</a></div> <div id=\""+n+"\" class=\"panel-collapse collapse in\">";
+                             // pics+="<div class=\"panel panel-default\"> <div class=\"panel-heading\"> <h4 class=\"panel-title\"> <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#"+n+"\">"+value.name+"</a></div> <div id=\""+n+"\" class=\"panel-collapse collapse in\">";
+                              if(n==0){
+                            pics+="<div class=\"panel panel-default\"> <div class=\"panel-heading\"><h4 class=\"panel-title\"> <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#"+n+"\">"+value.name+"</a> </h4></div><div id=\""+n+"\" class=\"panel-collapse collapse in\"> <div class=\"panel-body\">";
+                              }
+                              else{
+                        pics+=" </div> <div class=\"panel panel-default\"> <div class=\"panel-heading\"><h4 class=\"panel-title\"> <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#"+n+"\">"+value.name+"</a> </h4></div><div id=\""+n+"\" class=\"panel-collapse collapse\"> <div class=\"panel-body\">";    
+                                  
+                              }
+                              
+                              n++;
+
+                         $.each(value.photos, function( key, value1 ) {
+                            //picURL="https://graph.facebook.com/v2.8/'"+value1.id+"'/picture?type(large)&access_token=EAAItLA8fHTUBANgVxqAwEHaPSYNiyhDjRq0vGBHPToa1nZAsduUtDJXXxsmwWdO48SKDHK7Aaj50BFHq4jZCi5rdReTEHJJFp6VFEJudfyMUnm6s1eSp712dZCZAygP7fAHMSZB7aUVwsdyGZBDUIBI9xXUunm968ZD";
+                   
+                             pics+="<img class='Imgborder' src=\"https://graph.facebook.com/v2.8/"+value1.id+"/picture?type(large)&access_token=EAAItLA8fHTUBANgVxqAwEHaPSYNiyhDjRq0vGBHPToa1nZAsduUtDJXXxsmwWdO48SKDHK7Aaj50BFHq4jZCi5rdReTEHJJFp6VFEJudfyMUnm6s1eSp712dZCZAygP7fAHMSZB7aUVwsdyGZBDUIBI9xXUunm968ZD\" style=\"max-width:100%;\" /> <br/> <br/>";
+                        
+                         });
+                 pics+="</div> </div>";
+
+               //  n++;
+                        //pics+="</div></div>";
+                    }); 
+                 pic+="</div> </div> </div>";
+             }
+
+             
+              
+              
+          }
+
+              
+              
+             
+          }
+             
+             
+                 pics+="</div></div> </div></div>";
+             document.getElementById('progressBarPlaceholderAlbum').style.display='none';
+             if(n!=0){
+             $('#albumDataDiv').append(pics);
+                 console.log('++++++++++'+pics+'+++++++++');
+             }
+             else{
+                     row="<div class=\"panel panel-warning\" id=\"albumData\"> <div class=\"panel-heading\">No Data Found </div>";
+                 $('#albumDataDiv').append(row);
+             }
+             
+         
+                                     // for retreiving posts 
+             row='';
+             row+="<div id=\"postData\">"; 
+             var postCount=0;
+             $.each(result['posts'], function( index, value ){
+                           
+                      // alert(row);
+                       //alert(value.id+value.name+value.picture);
+                         if(value.message){
+                         row+="<div class=\"panel panel-default\" > <div class=\"panel-body\"> <table> <tr> <td rowspan='2' style='text-align:left; width:15%;'> <img src='"+logo+"' width=\"50px\" height=\"50px\"></img> </td> <td> <b>"+decodeURI(name)+"</b></td></tr> <tr><td style=\"padding-top: 3px;max-width:100%;\">"+value.created_time+"</td></tr> <tr> <td colspan='2'>" +value.message+"</td> </tr></table> </div></div> <br/>";
+                        // });
+                         }
+                 else if(value.story){
+                        row+="<div class=\"panel panel-default\" > <div class=\"panel-body\"> <table> <tr> <td rowspan='2' style='text-align:left; width:15%;'> <img src='"+logo+"' width=\"50px\" height=\"50px\"></img> </td> <td> <b>"+decodeURI(name)+"</b></td></tr> <tr><td style=\"padding-top: 3px;max-width:100%;\">"+value.created_time+"</td></tr> <tr> <td colspan='2'>" +value.story+"</td> </tr></table> </div></div> <br/>";
+                     
+                     
+                     
+                 }
+                 postCount++;
+                         });
+             row+="</div>";
+            document.getElementById('progressBarPlaceholderPost').style.display='none';
+             if(postCount>0){
+                 
+             
+             $('#postDataDiv').html(row);
+             }
+             else{
+               row="<div class=\"panel panel-warning\" id=\"postData\"> <div class=\"panel-heading\">No Data Found </div>"  ;
+               $('#postDataDiv').html(row);
+                 
+             }
+             
+
+        
+            $("#DetailsTab").show();
+            $("#usersTab").hide();
+            $("#PagesTab").hide();
+            $("#GroupsTab").hide();
+            $("#EventsTab").hide();
+            $("#PlacesTab").hide();
+            $("#FavoritesTab").hide();
+             
+                 
+         }});
+        
+        
+    }
+        if(type=='event'){
+             document.getElementById('progressBarPlaceholderAlbum').style.display='none';
+             document.getElementById('progressBarPlaceholderPost').style.display='none';
+            var row=''
+                                 row="<div class=\"panel panel-warning\" id=\"albumData\"> <div class=\"panel-heading\">No Data Found </div>";
+                 $('#albumDataDiv').append(row);
+            
+                    row="<div class=\"panel panel-warning\" id=\"postData\"> <div class=\"panel-heading\">No Data Found </div>"  ;
+               $('#postDataDiv').html(row);
+            
+                    
+            $("#DetailsTab").show();
+            $("#usersTab").hide();
+            $("#PagesTab").hide();
+            $("#GroupsTab").hide();
+            $("#EventsTab").hide();
+            $("#PlacesTab").hide();
+            $("#FavoritesTab").hide();
+            
+            
+        }
+
+
+        return false;
+        
+    }
+                 
+  function addToFavorite(id,type,name,picURL){
+           //   alert ("Add to favorite"+id+type+name+picURL);
+      var spanId="#"+id+'fav';
+      var Detail="#"+id+type+'fav';
+      //alert('spanId'+spanId);
+      //alert($(spanId).attr('class'));
+      //Removing from favorites
+      if($(spanId).attr('class')=='glyphicon glyphicon-star'){
+          deleteFromFavorites(id+type);
+      $(spanId).removeClass("glyphicon glyphicon-star");
+      $(spanId).addClass("glyphicon glyphicon-star-empty");
+          $(spanId).css('color','black');
+           $(Detail).removeClass("glyphicon glyphicon-star");
+      $(Detail).addClass("glyphicon glyphicon-star-empty");
+          $(Detail).css('color','black');
+          
+      }
+      
+      
+      //adding to favorites
+      else if($(spanId).attr('class')=='glyphicon glyphicon-star-empty'){
+          name=encodeURI(name);
+          saveToFavorites(id,type,name,picURL);
+                $(spanId).removeClass("glyphicon glyphicon-star-empty");
+      $(spanId).addClass("glyphicon glyphicon-star");
+      
+      $(spanId).css('color','#faf714');
+      $(Detail).removeClass("glyphicon glyphicon-star-empty");
+      $(Detail).addClass("glyphicon glyphicon-star");
+      
+      $(Detail).css('color','#faf714');
+      }
+        return false;
+      
+  }
+    
+    function saveToFavorites(id,type,name,picURL){
+        
+        //alert("inside saveToFavorites"+id+type+picURL+name);
+        
+        if(localStorage.getItem('FavoritesList')!=null || localStorage.getItem('FavoritesList')!=undefined){
+            var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+        }
+        else{
+         var FavoritesList =new Object();   
+        }
+          var newObj = new Object();
+          newObj ["id"]=id;
+          newObj["picURL"]=picURL;
+          newObj ["type"]=type;
+         newObj ["name"]=decodeURI(name);
+          FavoritesList [id+type]=newObj ;
+       // alert('key'+id+type);
+          localStorage.setItem('FavoritesList', JSON.stringify(FavoritesList));
+        //alert("added to favorites");
+        return false;
+  
+        
+    }
+    
+    function deleteFromFavorites(key){
+ // alert("inside delete from Favourites");
+  var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+  delete FavoritesList[key];
+  localStorage.setItem('FavoritesList', JSON.stringify(FavoritesList));
+       // alert("Favorite deleted succefully");
+        
+        
+        return false;
+}
+    
+        
+    function deleteFromFavorites_Display(key,value){
+  //alert("inside delete from Favourites");
+  var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+  delete FavoritesList[key];
+  localStorage.setItem('FavoritesList', JSON.stringify(FavoritesList));
+        //alert("Favorite deleted succefully");
+       x= document.getElementById("FavoritesTable");
+                    x.parentNode.removeChild(x);
+         var recordID='#'+value+'fav';
+              $(recordID).removeClass("glyphicon glyphicon-star");
+      $(recordID).addClass("glyphicon glyphicon-star-empty");
+          $(recordID).css('color','black');
+        showFavorites();
+        return false;
+}
+    
+    function showFavorites(){
+                            if(document.getElementById("NoFavoriteRecords")){
+            var x=document.getElementById("NoFavoriteRecords");
+            x.parentNode.removeChild(x);
+
+            } 
+        //alert("inside show favorites");
+    
+ var i=1;
+        $("#DetailsTab").hide();
+            //result=$.parseJSON(result);
+            var row="";
+ 
+        
+  var FavoritesList = JSON.parse(localStorage.getItem('FavoritesList'));
+tableHeader="<table class=\"table\" id=\"FavoritesTable\" style=\"text-align:left;margin-left:3%;margin-right:3%;\"> <thead style=\"vertical-align: center;border-bottom: 2px solid #eceee;padding: 12px;\"> <tr> <th style=\"padding: 12px;\"> #</th> <th style=\"padding: 12px;\">Profile Photo</th><th style=\"padding: 12px;\">Name</th><th style=\"padding: 12px;\">Type</th><th style=\"padding: 12px;\">Favorite</th><th style=\"padding: 12px;\"> Detail </th> </tr> </thead> </table>";
+        //$("#FavoritesTab").html(tableHeader);
+  for(var key in FavoritesList) {
+      $("#FavoritesTab").html(tableHeader);
+     var value = FavoritesList[key];
+     // alert(value['id'] + decodeURI(value ['name'])+value['picURL']+value['type']);  
+      row+="<tr style=\"padding:12px; vertical-align:center;border-top:1px solid #eceeef;text-align:left;\" id='"+value['id']+'fav'+"'>"+
+          "<td style=\"padding: 12px;\">"+i+"</td>"+
+          "<td style=\"padding: 12px;\"> <img src='"+value['picURL']+"' class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+
+          "<td style=\"padding: 12px;\">"+decodeURI(value['name'])+"</td>"+
+          "<td style=\"padding: 12px;\">"+value['type']+"</td>"+
+          "<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"deleteFromFavorites_Display('"+key+"',"+value['id']+");\"> <span class=\"glyphicon glyphicon-trash\" id=\""+value['id']+"\"></span></button></td>"+
+          "<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value['id']+",'"+value['type']+"','"+value['name']+"','"+value['picURL']+"');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>"; 
+
+i++;
+      
+      
+
+//row+="<tr style=\"padding: 12px; vertical-align: center;border-top: 1px solid #eceeef;text-align:left;\" id=\""+value['id']+"\"> <td style=\"padding: 12px;\">"+i+"</td>"+"<td style=\"padding: 12px;\"> <img src=\""+value['picURL']+"\" class=\"img-circle\" width=\"30px\" height=\"40px\" >"+"</td>"+"<td style=\"padding: 12px;\">"+encodeURI(value['name'])+"</td>"+"<td style=\"padding: 12px;\">"+value['type']+"</td>+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"addToFavorite("+value['id']+",'favorites');\"> <span class=\"glyphicon glyphicon-star-empty\" id=\""+value['id']+"\"></span></button></td>"+"<td style=\"padding: 12px;\"> <button type=\"button\" class=\"btn btn-default btn-sm\" style=\"outline:0;\" onclick=\"showDetails("+value['id']+",'favourite');\"> <span class=\"glyphicon glyphicon-menu-right\"></span></button></td>"+"</tr>"; 
+}
+        //$("#FavoritesTable").append(row); 
+
+      if(row!=""){
+            //$("#FavoritesTab").html(tableHeader);
+            $("#FavoritesTable").append(row);
+            
+        }
+        else{
+                        
+                             html=" <div class=\"panel panel-warning\" id='NoFavoriteRecords'> <div class=\"panel-heading\"><center>No Favorite Records Found </center> </div>";
+                $("#FavoritesTab").append(html);
+        } 
+
+        $("#FavoritesTab").show();
+
+
+        return false;
+    }
+    
+    */
+    
+      
+</script>
+        
+<script>
+        
+        </script>
+        
+        
+        
+ 
+</head>
+<body onload="getLocation();">
+<!-- CONTAINERS -->
+<!-- container puts padding around itself while container-fluid fills the whole screen. Bootstap grids require a container. -->
+ 
+<p id="demo"></p>
+ <!-- <table style="width:100%;">-->
+     <div clas="container" width="100%">
+
+         
+         
+         
+<nav class="navbar navbar-inverse" style="border:none;border-radius:0px;">
+  <div class="container-fluid" style="background-color:#F3F3F3;border-bottom:1px solid Silver;width:100%;"> 
+    <div class="navbar-header" style="color:rgb(59, 89, 152);width:30%;">
+     <h3 style="color: #3B5998;"><center> FB Search </center></h3>
+    </div>
+<div>
+    <form class="navbar-form navbar-center" id="form1" method="GET" action="formParser.php" role="form" data-toggle="validator">
+      <div class="input-group" style="margin-top:1%; width:70%;border-radius:0px;">
+          
+        <input id="keyword" type="text" class="form-control" placeholder="Type Something...." style="border-radius:0px;" required="">
+        <div class="input-group-btn">
+       <button class="btn btn-primary btn-md" type="submit" id="callPHP" style="border-radius:0;background-color:#3B5998;outline:0;">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+                      <!--    <span class="input-group-btn">
+                <button class="btn btn-primary btn-md" type="submit" id="callPHP" style="width:150px;border-radius:0;background-color:#3B5998;outline:0;">  <span class="glyphicon glyphicon-search" aria-hidden="true" ></span></button>
+              </span> -->
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div style="width:5px; height:auto;display:inline-block;"></div>
+            <button class="btn btn-default btn-md sharp" type="reset" value="Reset" id="clearButton" style="border-radius:0;outline:0;border:2px #3B5998 solid ;" onclick="funcClear1();" > Clear </button>
+        </div>
+          
+      </div>
+    </form>
+      </div>
+
+  </div>
+    <div style="border-bottom:2px #3B5998 solid ; background-color: white;">
+          <ul class="nav nav-pills nav-justified" style="border-radius:0;outline:0;">
+    <li  style="border-radius:0;background-color:rgb(59, 89, 152);outline:0; color:white;text-align:center;" class="active" id="UsersTabHeader" onclick="showData('UsersTabHeader','usersTab');"><a href="#">Users</a></li>
+    <li style="border-radius:0;outline:0;color:#3B5998;text-align:center;" id="PagesTabHeader" onclick="showData('PagesTabHeader','PagesTab');">Pages</li>
+    <li style="border-radius:0;outline:0;color:#3B5998;text-align:center;" id="EventsTabHeader" onclick="showData('EventsTabHeader','EventsTab');">Events</li>
+    <li style="border-radius:0;outline:0;color:#3B5998;text-align:center;" id="PlacesTabHeader" onclick="showData('PlacesTabHeader','PlacesTab');">Places</li>
+    <li style="border-radius:0;outline:0;color:#3B5998;text-align:center;" id="GroupsTabHeader" onclick="showData('GroupsTabHeader','GroupsTab');">Groups</li>
+    <li style="border-radius:0;outline:0;color:#3B5998;text-align:center;" id="FavoritesTabHeader" onclick="showData('FavoritesTabHeader','FavoritesTab');">Favorites</li>
+   </ul>
+     </div> 
+</nav>
+    </div>    
+     <div class="container">
+         
+     
+    <div id="usersTab" style="display:none;" > <br/></div>
+    <div id="PagesTab"  style="display:none;" > <br/></div>
+    <div id="EventsTab" style="display:none;" > <br/></div>
+    <div id="PlacesTab" style="display:none;" > <br/></div>
+    <div id="GroupsTab" style="display:none;" > <br/> </div>
+    <div id="FavoritesTab" style="display:none;" > <br/>         <div id="progressBarPlaceholderFav" style="display:none;"><div class="progress"  id="showProgressBar" style="display:block; margin-top:20%;"> <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%"></div></div></div></div>
+
+         
+         
+
+    <div id="DetailsTab" style="display:none;" class="panel-group">
+           
+        <div id="buttonDiv"> </div>
+        <div class="col-sm-6">
+        <div class="panel panel-default">
+       <div class="panel-heading">Albums</div>
+      <div class="panel-body" id="albumDataDiv"></div>
+            </div>
+
+        </div>
+        
+        <div class="col-sm-6" class="panel-group">
+                <div class="panel panel-default">
+       <div class="panel-heading">Posts</div>
+      <div class="panel-body" id="postDataDiv"></div>
+            </div>
+        
+        
+        
+        
+        </div>
+        
+        </div>
+
+
+         
+         </div>
+
+    </body>
+    
+    </html>
